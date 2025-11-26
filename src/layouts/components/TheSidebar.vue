@@ -2,20 +2,21 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  name: "DashboardInfoPage",
+  name: "TheSidebar",
 });
 </script>
 
 <template>
-  <div>
-    <h1 class="dashboard-info-title">Dashboard Info Page</h1>
-  </div>
+  <div class="sidebar">Sidebar</div>
 </template>
 
 <style lang="scss" scoped>
 @use "@/assets/scss/_mixins.scss" as *;
 
-.dashboard-info-title {
-  font-size: rem(24);
+.sidebar {
+  position: relative;
+  min-width: rem(256);
+  width: rem(256);
+  height: 100%;
 }
 </style>

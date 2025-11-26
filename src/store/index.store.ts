@@ -1,9 +1,12 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
+import winterBg from "@/assets/img/backgrounds/winter.png";
+
 Vue.use(Vuex);
 
 const state = {
+  background: winterBg,
   // items: [] as ToDoItem[],
   // nextId: 1,
 };

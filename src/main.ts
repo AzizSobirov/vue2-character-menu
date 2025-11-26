@@ -3,7 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store/index.store";
 
-// import "@/assets/fonts/fonts.scss";
+import "@/assets/scss/app.scss";
 
 Vue.config.productionTip = false;
 

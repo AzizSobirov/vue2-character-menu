@@ -1,0 +1,117 @@
+@use "./mixins" as *;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#app * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#app input,
+#app textarea,
+#app button,
+#app select {
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+#app {
+  --transition-ease: 0.25s ease-in-out;
+
+  --primary: #0a83fb;
+  --text-color: #fff;
+  --background: #141c2a;
+}
+
+#app {
+  height: 100vh;
+  font-family: "Golos Text", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: var(--text-color);
+  background: var(--background);
+}
+
+/* Page transition animation */
+.default-transition-enter-active {
+  animation: zoom-in 0.3s ease-out, fade-in 0.3s ease-out;
+  /* animation: fade-in 0.3s ease-out; */
+}
+
+.default-transition-leave-active {
+  animation: zoom-out 0.3s ease-in, fade-out 0.3s ease-in;
+  /* animation: fade-out 0.3s ease-in; */
+}
+
+/* Unlock animation for lock screen (like iPhone unlock) */
+@keyframes unlock-animation {
+  from {
+    transform: scale(1); /* Start at normal size */
+    opacity: 1; /* Fully visible */
+  }
+  to {
+    transform: scale(0.8); /* Scale down to simulate zoom-out */
+    opacity: 0; /* Fade out */
+  }
+}
+
+/* Animations for zoom and fade transitions */
+@keyframes zoom-in {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoom-out {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.8);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Inner transition for navigating between sections */
+.inner-transition-enter-active {
+  animation: fade-in 0.3s ease-out;
+}
+
+.inner-transition-leave-active {
+  animation: fade-out 0.3s ease-in;
+}
