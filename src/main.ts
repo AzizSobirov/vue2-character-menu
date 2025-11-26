@@ -1,13 +1,11 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import store from "./store";
+import store from "./store/index.store";
 
-import "@/assets/fonts/fonts.scss";
+// import "@/assets/fonts/fonts.scss";
 
 Vue.config.productionTip = false;
-
-document.title = "To Do App";
 
 new Vue({
   router,
