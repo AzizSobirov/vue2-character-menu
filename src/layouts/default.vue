@@ -50,13 +50,15 @@ export default Vue.extend({
   & > main {
     height: 100%;
     flex-grow: 1;
+  }
 
-    & > .content {
-      height: 100%;
-      width: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
+  .content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 </style>
