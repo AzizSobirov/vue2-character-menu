@@ -2,12 +2,12 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  name: "DashboardSkillsPage",
+  name: "CharacterSkillsPage",
 });
 </script>
 
 <template>
   <div>
-    <h1>Dashboard Skills Page</h1>
+    <h1>Character Skills Page</h1>
   </div>
 </template>

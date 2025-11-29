@@ -2,12 +2,12 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  name: "DashboardPropertyPage",
+  name: "CharacterPropertyPage",
 });
 </script>
 
 <template>
   <div>
-    <h1>Dashboard Property Page</h1>
+    <h1>Character Property Page</h1>
   </div>
 </template>

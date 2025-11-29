@@ -60,9 +60,13 @@ export default Vue.extend({
     height: 100%;
     width: 100%;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    overflow-y: auto;
   }
 }
 </style>

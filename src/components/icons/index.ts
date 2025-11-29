@@ -11,3 +11,5 @@ export { default as Donate } from "./Donate.vue";
 export { default as ChevronDown } from "./ChevronDown.vue";
 export { default as Settings } from "./Settings.vue";
 export { default as XIcon } from "./X.vue";
+export { default as Info } from "./Info.vue";
+export { default as Crown } from "./Crown.vue";

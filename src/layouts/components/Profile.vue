@@ -31,7 +31,7 @@ export default Vue.extend({
       </div>
 
       <div class="profile__name">
-        <span>{{ profile.name }}</span>
+        <span>{{ profile.full_name }}</span>
       </div>
     </div>
 

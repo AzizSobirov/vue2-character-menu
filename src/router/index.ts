@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
-import { dashboardRoutes } from "@/modules/dashboard/router";
+import { characterRoutes } from "@/modules/character/router";
 import DefaultLayout from "@/layouts/default.vue";
 
 Vue.use(VueRouter);
@@ -10,9 +10,9 @@ const routes: Array<RouteConfig> = [
     path: "/",
     name: "index",
     component: DefaultLayout,
-    children: [...dashboardRoutes],
+    children: [...characterRoutes],
     redirect(to) {
-      return { name: "dashboard-info" };
+      return { name: "character-info" };
     },
   },
 ];

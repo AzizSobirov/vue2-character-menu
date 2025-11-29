@@ -47,7 +47,7 @@ export default Vue.extend({
           icon: "UserCircle",
           title: "Персонаж",
           children: [
-            { title: "Информация", path: "/dashboard" },
+            { title: "Информация", path: "/character" },
             { title: "Имущество", path: "/character/inventory" },
             { title: "Навыки работы", path: "/character/skills" },
             { title: "Достижения", path: "/character/achievements" },
@@ -60,7 +60,7 @@ export default Vue.extend({
           icon: "Sparkles",
           title: "События",
           children: [
-            { title: "Информация", path: "/dashboard" },
+            { title: "Информация", path: "/Character" },
             { title: "Имущество", path: "/character/inventory" },
             { title: "Навыки работы", path: "/character/skills" },
             { title: "Достижения", path: "/character/achievements" },
