@@ -7,4 +7,5 @@ export interface Profile {
     cash: number;
     card: number;
   };
+  uc: number;
 }

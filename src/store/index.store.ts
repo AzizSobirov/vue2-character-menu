@@ -17,6 +17,7 @@ const state: RootState = {
       cash: 2540,
       card: 8423,
     },
+    uc: 25000,
   },
   // items: [] as ToDoItem[],
   // nextId: 1,

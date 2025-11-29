@@ -105,7 +105,7 @@ export default Vue.extend({
       position: absolute;
       bottom: 0;
       right: 0;
-      z-index: 1;
+      z-index: 2;
       transform: translate(15%, 15%);
       background-color: var(--deep-blue);
       border: rem(2) solid #141c2a;
