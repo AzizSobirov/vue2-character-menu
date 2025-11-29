@@ -3,11 +3,24 @@ import Vue from "vue";
 
 export default Vue.extend({
   name: "TheHeader",
+  methods: {
+    fullScreenToggle() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    },
+  },
 });
 </script>
 
 <template>
-  <div class="header">Header</div>
+  <div class="header">
+    <span @click="fullScreenToggle">Header</span>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -17,6 +30,6 @@ export default Vue.extend({
   position: relative;
   min-width: rem(256);
   width: rem(256);
-  height: rem(80);
+  height: rem(84);
 }
 </style>

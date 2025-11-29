@@ -1,5 +1,5 @@
 <template>
-  <div id="app" ref="app">
+  <div id="app" ref="app" class="app">
     <router-view></router-view>
   </div>
 </template>
@@ -16,7 +16,8 @@ export default Vue.extend({
   },
   methods: {
     updateFontSize() {
-      const calculatedSize = (this.fontSize / 1080) * window.innerHeight;
+      const baseHeight = 962; // 1080p 
+      const calculatedSize = (this.fontSize / baseHeight) * window.innerHeight;
       if (this.$refs.app) {
         (this.$refs.app as HTMLElement).style.fontSize = `${calculatedSize}px`;
       }
