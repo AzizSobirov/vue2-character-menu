@@ -17,4 +17,7 @@ export interface Profile {
     icon: string;
     end_date: string;
   };
+  last_activity: string;
+  last_session: string;
+  bonus_time: string;
 }

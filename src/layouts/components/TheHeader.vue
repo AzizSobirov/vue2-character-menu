@@ -154,7 +154,7 @@ export default Vue.extend({
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: var(--border);
+  color: var(--text-white-50);
   border-radius: rem(8);
   border: rem(1) solid var(--border);
   transition: background var(--transition-ease);

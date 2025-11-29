@@ -104,6 +104,44 @@ export default Vue.extend({
               </div>
             </div>
           </div>
+
+          <div class="character__last-login">
+            <img src="@/assets/img/shield.png" alt="" />
+
+            <div class="group">
+              <span class="login-time">
+                {{ profile.last_activity }}
+              </span>
+              <span class="label"> Последний вход в аккаунт </span>
+            </div>
+
+            <button>
+              <span>Text</span>
+            </button>
+          </div>
+
+          <div class="character__last-session">
+            <img src="@/assets/img/clock.png" alt="" />
+
+            <div class="group">
+              <span class="login-time">
+                {{ profile.last_session }}
+              </span>
+              <span class="label"> За последний сеанс</span>
+
+              <div
+                class="progress"
+                :style="{
+                  '--level': '80%',
+                }"
+              ></div>
+
+              <span class="label">
+                До получения бонуса:
+                <strong>{{ profile.bonus_time }}</strong>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -130,7 +168,7 @@ export default Vue.extend({
     ),
     linear-gradient(0deg, #101723 24%, rgba(16, 23, 35, 0) 48%);
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: rem(24);
 
@@ -214,7 +252,7 @@ export default Vue.extend({
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: rem(40);
+    gap: rem(10);
   }
 
   &__text {
@@ -239,7 +277,7 @@ export default Vue.extend({
     &-desc {
       font-size: rem(12);
       font-weight: 500;
-      color: rgb(255, 255, 255, 0.5);
+      color: var(--text-white-50);
       line-height: 1.35;
     }
   }
@@ -284,9 +322,10 @@ export default Vue.extend({
     height: 100%;
     width: 100%;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-end;
     justify-content: flex-start;
-    gap: rem(24);
+    gap: rem(16) rem(8);
   }
 
   &__list {
@@ -294,11 +333,10 @@ export default Vue.extend({
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    gap: rem(16);
   }
 
   &__item {
-    padding: rem(12);
+    padding: rem(8);
     min-width: rem(160);
     width: rem(160);
     height: rem(60);
@@ -324,13 +362,127 @@ export default Vue.extend({
 
     &-label {
       font-size: rem(12);
-      color: var(--gray-2);
+      color: var(--text-white-50);
     }
 
     &-value {
       font-size: rem(14);
       font-weight: 600;
     }
+  }
+
+  &__last-login,
+  &__last-session {
+    position: relative;
+    z-index: 2;
+    padding: rem(16) rem(16) 0;
+    width: rem(250);
+    height: rem(110);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: calc(100% + rem(24));
+      backdrop-filter: blur(12px);
+      background: linear-gradient(
+        180deg,
+        rgba(136, 197, 89, 0.36) 0%,
+        rgba(136, 197, 89, 0.12) 50%,
+        rgba(136, 197, 89, 0) 100%
+      );
+      border-radius: rem(12) rem(12) 0 0;
+      pointer-events: none;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: rem(80);
+      height: rem(80);
+      transform: translate(10%, -20%) rotate(12deg);
+      pointer-events: none;
+    }
+
+    .group {
+      padding: rem(4);
+      flex-grow: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: rem(4);
+    }
+
+    .label {
+      font-size: rem(12);
+      color: var(--text-white-50);
+
+      strong {
+        color: white;
+      }
+    }
+
+    .login-time {
+      font-size: rem(14);
+      font-weight: 600;
+    }
+
+    .progress {
+      position: relative;
+      margin: auto 0 rem(8);
+      width: 100%;
+      height: rem(6);
+      border-radius: rem(4);
+      background: rgb(255, 255, 255, 0.1);
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: var(--level);
+        max-width: 100%;
+        height: 100%;
+        background: linear-gradient(270deg, #f8b830 0%, #ff7400 100%);
+        border-radius: inherit;
+      }
+    }
+
+    button {
+      margin-top: auto;
+      height: rem(36);
+      width: 100%;
+      border-radius: rem(8);
+      border: rem(1) solid rgb(255, 255, 255, 0.1);
+      cursor: pointer;
+
+      &:hover {
+        background: rgb(255, 255, 255, 0.05);
+      }
+
+      span {
+        font-size: rem(12);
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__last-session::before {
+    background: linear-gradient(
+      180deg,
+      rgba(236, 181, 119, 0.36) 0%,
+      rgba(236, 181, 119, 0.12) 50%,
+      rgba(236, 181, 119, 0) 100%
+    );
   }
 }
 
