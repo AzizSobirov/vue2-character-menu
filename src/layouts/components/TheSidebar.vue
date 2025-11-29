@@ -29,5 +29,11 @@ export default Vue.extend({
   min-width: rem(256);
   width: rem(256);
   height: 100%;
+  background: linear-gradient(315deg, #131720 0%, #10131b 100%);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 </style>

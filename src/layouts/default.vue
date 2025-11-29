@@ -45,17 +45,21 @@ export default Vue.extend({
 .layout {
   height: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 
   & > main {
     height: 100%;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .content {
     position: relative;
     height: 100%;
     width: 100%;
+    flex-grow: 1;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

@@ -156,7 +156,7 @@ export default Vue.extend({
       background: linear-gradient(
         to right,
         transparent,
-        rgba(255, 255, 255, 0.1),
+        var(--border),
         transparent
       );
     }
@@ -174,7 +174,7 @@ export default Vue.extend({
       gap: rem(6);
 
       &:first-child {
-        border-right: rem(1) solid rgba(255, 255, 255, 0.1);
+        border-right: rem(1) solid var(--border);
       }
 
       svg {
