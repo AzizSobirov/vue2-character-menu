@@ -16,7 +16,7 @@ export default Vue.extend({
   },
   methods: {
     updateFontSize() {
-      const baseHeight = 962; // 1080p
+      const baseHeight = 1080; // 1080p
       const calculatedSize = (this.fontSize / baseHeight) * window.innerHeight;
       if (this.$refs.app) {
         (this.$refs.app as HTMLElement).style.fontSize = `${calculatedSize}px`;
